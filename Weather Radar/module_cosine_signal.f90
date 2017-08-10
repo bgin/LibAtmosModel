@@ -7,10 +7,11 @@ module mod_cosine_signal
  !
  !
  !          Module  name:
- !                         'mod_purecose_pulse'
+ !                         'mod_cosine_signal'
  !          
  !          Purpose:
- !                   Pure cosine signal pulse
+ !                     Implementation of complex domain 
+ !                     Cosine signal.
  !                   
  !                     
  !          History:
