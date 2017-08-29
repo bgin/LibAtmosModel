@@ -71,7 +71,7 @@ void  rcp_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, _I
 
 	if(_may_i_use_cpu_feature(_FEATURE_FMA)) {
 
-		for(int i{0}; i != src_len; i += INCR_BY_32) {
+		for(int i{0}; i != src_len-32; i += INCR_BY_32) {
 
 #if defined SOFT_PREFETCH_L1 && \
 	IS_EXCEEDING_L1 > L1_MAX_SP
@@ -93,7 +93,7 @@ void  rcp_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, _I
 	}
 	else {
 
-		for (int i{ 0 }; i != src_len; i += INCR_BY_32) {
+		for (int i{ 0 }; i != src_len-32; i += INCR_BY_32) {
 
 #if defined SOFT_PREFETCH_L1 && \
 	IS_EXCEEDING_L1 > L1_MAX_SP
@@ -141,7 +141,7 @@ void  rcp_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, _I
 
 	if(_may_i_use_cpu_feature(_FEATURE_FMA)) {
 		
-		for (int i{0}; i != src_len; i += INCR_BY_8) {
+		for (int i{0}; i != src_len-8; i += INCR_BY_8) {
 #if defined SOFT_PREFETCH_L1
 #pragma noprefetch src,dst
 			_mm_prefetch(reinterpret_cast<const char*>(&src[i]), _MM_HINT_T0);
@@ -154,7 +154,7 @@ void  rcp_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, _I
    }
    else {
 
-	   for (int i{0}; i != src_len; i += INCR_BY_8 ) {
+	   for (int i{0}; i != src_len-8; i += INCR_BY_8 ) {
 #if defined SOFT_PREFETCH_L1
 #pragma noprefetch src,dst
 		   _mm_prefetch(reinterpret_cast<const char*>(&src[i]), _MM_HINT_T0);
@@ -234,7 +234,7 @@ void  rsqrt_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, 
 
 	if(_may_i_use_cpu_feature(_FEATURE_FMA)) {
 		
-		for(int i{0}; i != src_len; i += INCR_BY_32) {
+		for(int i{0}; i != src_len-32; i += INCR_BY_32) {
 
 #if defined SOFT_PREFETCH_L1 && \
  IS_EXCEEDING_L1 > L1_MAX_SP
@@ -256,7 +256,7 @@ void  rsqrt_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, 
 	}
 	else {
 
-		for (int i{ 0 }; i != src_len; i += INCR_BY_32) {
+		for (int i{ 0 }; i != src_len-32; i += INCR_BY_32) {
 
 #if defined SOFT_PREFETCH_L1 && \
 	IS_EXCEEDING_L1 > L1_MAX_SP
@@ -306,7 +306,7 @@ void  rsqrt_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, 
 
 	if (_may_i_use_cpu_feature(_FEATURE_FMA)) {
 
-		for (int i{ 0 }; i != src_len; i += INCR_BY_8) {
+		for (int i{ 0 }; i != src_len-8; i += INCR_BY_8) {
 #if defined SOFT_PREFETCH_L1
 #pragma noprefetch src,dst
 			_mm_prefetch(reinterpret_cast<const char*>(&src[i]), _MM_HINT_T0);
@@ -319,7 +319,7 @@ void  rsqrt_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, 
 	}
 	else {
 
-		for (int i{ 0 }; i != src_len; i += INCR_BY_8) {
+		for (int i{ 0 }; i != src_len-8; i += INCR_BY_8) {
 #if defined SOFT_PREFETCH_L1
 #pragma noprefetch src,dst
 			_mm_prefetch(reinterpret_cast<const char*>(&src[i]), _MM_HINT_T0);
@@ -401,7 +401,7 @@ void  sqrt_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, _
 
 	if(_may_i_use_cpu_feature(_FEATURE_FMA)) {
 		
-		for(int i{0}; i != src_len; i += INCR_BY_32) {
+		for(int i{0}; i != src_len-32; i += INCR_BY_32) {
 
 #if defined SOFT_PREFETCH_L1 && \
 	IS_EXCEEDING_L1 > L1_MAX_SP
@@ -423,7 +423,7 @@ void  sqrt_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, _
 	}
 	else {
 
-		for (int i{ 0 }; i != src_len; i += INCR_BY_32) {
+		for (int i{ 0 }; i != src_len-32; i += INCR_BY_32) {
 
 #if defined SOFT_PREFETCH_L1 && \
 	IS_EXCEEDING_L1 > L1_MAX_SP
@@ -470,7 +470,7 @@ void  sqrt_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, _
 
 	if (_may_i_use_cpu_feature(_FEATURE_FMA)) {
 
-		for (int i{ 0 }; i != src_len; i += INCR_BY_8) {
+		for (int i{ 0 }; i != src_len-8; i += INCR_BY_8) {
 #if defined SOFT_PREFETCH_L1
 #pragma noprefetch src,dst
 			_mm_prefetch(reinterpret_cast<const char*>(&src[i]), _MM_HINT_T0);
@@ -483,7 +483,7 @@ void  sqrt_avx256_ps(_In_ const float* __restrict src, _In_ const int src_len, _
 	}
 	else {
 
-		for (int i{ 0 }; i != src_len; i += INCR_BY_8) {
+		for (int i{ 0 }; i != src_len-8; i += INCR_BY_8) {
 #if defined SOFT_PREFETCH_L1
 #pragma noprefetch src,dst
 			_mm_prefetch(reinterpret_cast<const char*>(&src[i]), _MM_HINT_T0);
