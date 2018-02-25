@@ -228,6 +228,7 @@ module mod_wsr88d_hailtalt
            do i = 1_I32P, this%m_nht20c
                this%m_HT20C(i) = LAM_PINF
            end do
+           this%m_isbuilt = .true.
            if(dbg == .true.) then
                call this%dbg_info()
            end if
