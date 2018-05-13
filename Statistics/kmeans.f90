@@ -1,7 +1,55 @@
-subroutine ch_cap ( c )
 
+
+module kmeans_lib   
+
+    
+ !===================================================================================85
+ !---------------------------- DESCRIPTION ------------------------------------------85
+ !
+ !
+ !
+ !          Module  name:
+ !                         'kmeans_lib'
+ !          
+ !          Purpose:
+ !                        John Burkardt original KMEANS library wrapped into module.
+ !          History:
+ !                        Date: 13-05-2018
+ !                        Time: 10:22 GMT+2
+ !
+ !          Version:
+ !
+ !                      Major: 1
+ !                      Minor: 0
+ !                      Micro: 0
+ !
+ !          Author:  
+ !                  John Burkardt
+ !          
+ !          Modified by: 
+ !                      
+ !                  Bernard Gingold
+ !                 
+ !          References:
+ !         
+ !                John Burkardt webpage
+ !    
+ !         
+ !          E-mail:
+ !                  
+ !                      beniekg@gmail.com
+ !==================================================================================85
+    ! Tab:5 col - Type and etc.. definitions
+    ! Tab:10,11 col - Type , function and subroutine code blocks.
+
+    
+
+
+contains
+    
+subroutine ch_cap ( c )  
 !*****************************************************************************80
-!
+!   subroutine ch_cap(c)
 !! CH_CAP capitalizes a single character.
 !
 !  Licensing:
@@ -5312,3 +5360,6 @@ subroutine timestamp ( )
 
   return
 end
+
+
+end module kmeans_lib
